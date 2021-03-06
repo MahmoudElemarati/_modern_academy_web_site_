@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0996Departments" table="a_0_9_9_6_departments" catalog="modern_web_site" optimistic-lock="version">
+        <id name="departmentId" type="int">
+            <column name="department_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="a0999TeachersByHeadId" class="com.modern.www._1_2_MySql_DB_entities.A0999Teachers" fetch="select">
+            <column name="head_id" />
+        </many-to-one>
+        <many-to-one name="a0999TeachersByViceHeadId" class="com.modern.www._1_2_MySql_DB_entities.A0999Teachers" fetch="select">
+            <column name="vice_head_id" />
+        </many-to-one>
+        <property name="departmentNameA" type="string">
+            <column name="department_name_a" length="100" not-null="true" />
+        </property>
+        <property name="departmentNameE" type="string">
+            <column name="department_name_e" length="100" not-null="true" />
+        </property>
+        <property name="departmentIndex" type="java.lang.Integer">
+            <column name="department_index" />
+        </property>
+        <set name="a0999Teacherses" table="a_0_9_9_9_teachers" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="department_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0999Teachers" />
+        </set>
+        <set name="a0994DepartmentsManagerses" table="a_0_9_9_4_departments_managers" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="department_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0994DepartmentsManagers" />
+        </set>
+        <set name="a0053Courses" table="a_0_0_5_3_course" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="department_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0053Course" />
+        </set>
+        <set name="a0002Tabses" table="a_0_0_0_2_tabs" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="department_id" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0002Tabs" />
+        </set>
+    </class>
+</hibernate-mapping>

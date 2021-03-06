@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0002Tabs" table="a_0_0_0_2_tabs" catalog="modern_web_site" optimistic-lock="version">
+        <composite-id name="id" class="com.modern.www._1_2_MySql_DB_entities.A0002TabsId">
+            <key-property name="tabId" type="int">
+                <column name="tab_id" />
+            </key-property>
+            <key-property name="mainTabId" type="int">
+                <column name="main_tab_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="a0001MainTabs" class="com.modern.www._1_2_MySql_DB_entities.A0001MainTabs" update="false" insert="false" fetch="select">
+            <column name="main_tab_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="a0996Departments" class="com.modern.www._1_2_MySql_DB_entities.A0996Departments" fetch="select">
+            <column name="department_id" />
+        </many-to-one>
+        <property name="tabNameA" type="string">
+            <column name="tab_name_a" length="100" not-null="true" />
+        </property>
+        <property name="tabNameE" type="string">
+            <column name="tab_name_e" length="100" not-null="true" />
+        </property>
+        <property name="iconFaFa" type="string">
+            <column name="icon_fa_fa" length="100" />
+        </property>
+        <property name="link" type="string">
+            <column name="link" />
+        </property>
+        <property name="index1" type="java.lang.Integer">
+            <column name="index_1" />
+        </property>
+        <property name="tabLockedEnch" type="string">
+            <column name="tab_locked_ench" length="50" not-null="true" />
+        </property>
+        <set name="a0003SubTabses" table="a_0_0_0_3_sub_tabs" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tab_id" not-null="true" />
+                <column name="main_tab_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0003SubTabs" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0003SubTabs" table="a_0_0_0_3_sub_tabs" catalog="modern_web_site" optimistic-lock="version">
+        <composite-id name="id" class="com.modern.www._1_2_MySql_DB_entities.A0003SubTabsId">
+            <key-property name="subTabId" type="int">
+                <column name="sub_tab_id" />
+            </key-property>
+            <key-property name="tabId" type="int">
+                <column name="tab_id" />
+            </key-property>
+            <key-property name="mainTabId" type="int">
+                <column name="main_tab_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="a0002Tabs" class="com.modern.www._1_2_MySql_DB_entities.A0002Tabs" update="false" insert="false" fetch="select">
+            <column name="tab_id" not-null="true" />
+            <column name="main_tab_id" not-null="true" />
+        </many-to-one>
+        <property name="subTabNameA" type="string">
+            <column name="sub_tab_name_a" length="100" not-null="true" />
+        </property>
+        <property name="subTabNameE" type="string">
+            <column name="sub_tab_name_e" length="100" not-null="true" />
+        </property>
+        <property name="iconFaFa" type="string">
+            <column name="icon_fa_fa" length="100" />
+        </property>
+        <property name="link" type="string">
+            <column name="link" />
+        </property>
+        <property name="index1" type="int">
+            <column name="index_1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

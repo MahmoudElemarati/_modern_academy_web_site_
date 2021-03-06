@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0999Teachers" table="a_0_9_9_9_teachers" catalog="modern_web_site" optimistic-lock="version">
+        <id name="teacherId" type="int">
+            <column name="teacher_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="a0996Departments" class="com.modern.www._1_2_MySql_DB_entities.A0996Departments" fetch="select">
+            <column name="department_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="a0998TeachersTypes" class="com.modern.www._1_2_MySql_DB_entities.A0998TeachersTypes" fetch="select">
+            <column name="teacher_type_id" not-null="true" />
+        </many-to-one>
+        <property name="teacherNameA" type="string">
+            <column name="teacher_name_a" length="100" not-null="true" />
+        </property>
+        <property name="teacherNameE" type="string">
+            <column name="teacher_name_e" length="100" not-null="true" />
+        </property>
+        <property name="teacherPhoto" type="string">
+            <column name="teacher_photo" />
+        </property>
+        <property name="teacherAcademicEmail" type="string">
+            <column name="teacher_academic_email" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="teacherPassword" type="string">
+            <column name="teacher_password" length="100" not-null="true" />
+        </property>
+        <property name="teacherFacebook" type="string">
+            <column name="teacher_facebook" length="200" />
+        </property>
+        <property name="teacherTwitter" type="string">
+            <column name="teacher_twitter" length="200" />
+        </property>
+        <property name="teacherLinkedIn" type="string">
+            <column name="teacher_linked_in" length="200" />
+        </property>
+        <property name="teacherGooglePlus" type="string">
+            <column name="teacher_google_plus" length="200" />
+        </property>
+        <set name="a0996DepartmentsesForHeadId" table="a_0_9_9_6_departments" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="head_id" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0996Departments" />
+        </set>
+        <set name="a0996DepartmentsesForViceHeadId" table="a_0_9_9_6_departments" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vice_head_id" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0996Departments" />
+        </set>
+        <set name="a0994DepartmentsManagerses" table="a_0_9_9_4_departments_managers" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="teacher_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0994DepartmentsManagers" />
+        </set>
+        <set name="a0997TeachersTeachCourseses" table="a_0_9_9_7_teachers_teach_courses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="teacher_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0997TeachersTeachCourses" />
+        </set>
+    </class>
+</hibernate-mapping>

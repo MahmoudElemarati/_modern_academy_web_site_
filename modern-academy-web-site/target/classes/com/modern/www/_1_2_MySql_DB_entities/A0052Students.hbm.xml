@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0052Students" table="a_0_0_5_2_students" catalog="modern_web_site" optimistic-lock="version">
+        <id name="stdId" type="int">
+            <column name="std_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="a0050Levels" class="com.modern.www._1_2_MySql_DB_entities.A0050Levels" fetch="select">
+            <column name="level_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="a0051Lists" class="com.modern.www._1_2_MySql_DB_entities.A0051Lists" fetch="select">
+            <column name="list_id" not-null="true" />
+        </many-to-one>
+        <property name="stdNameA" type="string">
+            <column name="std_name_a" length="100" not-null="true" />
+        </property>
+        <property name="stdNameE" type="string">
+            <column name="std_name_e" length="100" not-null="true" />
+        </property>
+        <property name="stdProfilePhoto" type="string">
+            <column name="std_profile_photo" />
+        </property>
+        <property name="stdAcademicEmail" type="string">
+            <column name="std_academic_email" length="100" not-null="true" />
+        </property>
+        <property name="stdPersonalEmail" type="string">
+            <column name="std_personal_email" length="100" unique="true" />
+        </property>
+        <property name="stdUserName" type="string">
+            <column name="std_user_name" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="stdPassword" type="string">
+            <column name="std_password" length="100" not-null="true" />
+        </property>
+        <set name="a0056Complaintses" table="a_0_0_5_6_complaints" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="std_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0056Complaints" />
+        </set>
+        <set name="a0055StudentsCourseses" table="a_0_0_5_5_students_courses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="std_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0055StudentsCourses" />
+        </set>
+    </class>
+</hibernate-mapping>

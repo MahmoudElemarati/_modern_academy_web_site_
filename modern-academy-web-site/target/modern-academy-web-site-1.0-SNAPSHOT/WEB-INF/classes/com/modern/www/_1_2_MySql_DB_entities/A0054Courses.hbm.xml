@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0054Courses" table="a_0_0_5_4_courses" catalog="modern_web_site" optimistic-lock="version">
+        <composite-id name="id" class="com.modern.www._1_2_MySql_DB_entities.A0054CoursesId">
+            <key-property name="courseId" type="int">
+                <column name="course_id" />
+            </key-property>
+            <key-property name="courseCode" type="string">
+                <column name="course_code" length="10" />
+            </key-property>
+            <key-property name="listId" type="int">
+                <column name="list_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="a0051Lists" class="com.modern.www._1_2_MySql_DB_entities.A0051Lists" update="false" insert="false" fetch="select">
+            <column name="list_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="a0053Course" class="com.modern.www._1_2_MySql_DB_entities.A0053Course" update="false" insert="false" fetch="select">
+            <column name="course_id" not-null="true" />
+        </many-to-one>
+        <property name="maxMidTerm" type="int">
+            <column name="max_mid_term" not-null="true" />
+        </property>
+        <property name="maxYearWork" type="java.lang.Integer">
+            <column name="max_year_work" />
+        </property>
+        <property name="maxLab" type="java.lang.Integer">
+            <column name="max_lab" />
+        </property>
+        <property name="maxFinal" type="java.lang.Integer">
+            <column name="max_final" />
+        </property>
+        <property name="total" type="java.lang.Integer">
+            <column name="total" />
+        </property>
+        <set name="a0997TeachersTeachCourseses" table="a_0_9_9_7_teachers_teach_courses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+                <column name="course_code" length="10" not-null="true" />
+                <column name="list_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0997TeachersTeachCourses" />
+        </set>
+        <set name="a0055StudentsCourseses" table="a_0_0_5_5_students_courses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+                <column name="course_code" length="10" not-null="true" />
+                <column name="list_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0055StudentsCourses" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0053Course" table="a_0_0_5_3_course" catalog="modern_web_site" optimistic-lock="version">
+        <id name="courseId" type="int">
+            <column name="course_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="a0996Departments" class="com.modern.www._1_2_MySql_DB_entities.A0996Departments" fetch="select">
+            <column name="department_id" not-null="true" />
+        </many-to-one>
+        <property name="courseNameA" type="string">
+            <column name="course_name_a" length="100" not-null="true" />
+        </property>
+        <property name="courseNameE" type="string">
+            <column name="course_name_e" length="100" not-null="true" />
+        </property>
+        <property name="coursePanaerPhoto" type="string">
+            <column name="course_panaer_photo" />
+        </property>
+        <set name="a0054Courseses" table="a_0_0_5_4_courses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0054Courses" />
+        </set>
+    </class>
+</hibernate-mapping>

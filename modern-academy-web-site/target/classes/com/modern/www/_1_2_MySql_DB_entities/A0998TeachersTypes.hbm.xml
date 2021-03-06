@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A0998TeachersTypes" table="a_0_9_9_8_teachers_types" catalog="modern_web_site" optimistic-lock="version">
+        <id name="teacherTypeId" type="int">
+            <column name="teacher_type_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="teacherTypeNameA" type="string">
+            <column name="teacher_type_name_a" length="45" not-null="true" />
+        </property>
+        <property name="teacherTypeNameE" type="string">
+            <column name="teacher_type_name_e" length="45" not-null="true" />
+        </property>
+        <set name="a0999Teacherses" table="a_0_9_9_9_teachers" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="teacher_type_id" not-null="true" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A0999Teachers" />
+        </set>
+    </class>
+</hibernate-mapping>

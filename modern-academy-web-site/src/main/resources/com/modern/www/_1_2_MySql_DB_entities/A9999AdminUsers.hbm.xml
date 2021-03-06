@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.modern.www._1_2_MySql_DB_entities.A9999AdminUsers" table="a_9_9_9_9_admin_users" catalog="modern_web_site" optimistic-lock="version">
+        <id name="userId" type="int">
+            <column name="user_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="a9999AdminUsers" class="com.modern.www._1_2_MySql_DB_entities.A9999AdminUsers" fetch="select">
+            <column name="registered_user_id" />
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="user_name" length="100" not-null="true" />
+        </property>
+        <property name="userUserName" type="string">
+            <column name="user_user_name" length="100" not-null="true" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="user_password" length="200" not-null="true" />
+        </property>
+        <set name="a9999AdminUserses" table="a_9_9_9_9_admin_users" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="registered_user_id" />
+            </key>
+            <one-to-many class="com.modern.www._1_2_MySql_DB_entities.A9999AdminUsers" />
+        </set>
+    </class>
+</hibernate-mapping>
