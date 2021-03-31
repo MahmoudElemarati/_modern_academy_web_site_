@@ -35,10 +35,12 @@
         }
         if (HTMLBody.equals("Open")) {
 
+            String Department = request.getParameter("Department");
+
             String current_page_accessServlet = new _002_manage_URL(request).getAccessServlet();
             // -2-get page name from DB
-            List<A0003SubTabs> a0002TabsList = new A0003SubTabs_DAO().GetSubTabsBy(current_page_accessServlet);
-            A0003SubTabs a0003SubTabs = a0002TabsList.get(0);
+            List<A0003SubTabs> A0003SubTabsList = new A0003SubTabs_DAO().GetSubTabsBy(current_page_accessServlet + "?Department=" + Department);
+            A0003SubTabs a0003SubTabs = A0003SubTabsList.get(0);
             try {
                 a0003SubTabs.getA0002Tabs().getA0996Departments().getDepartmentNameA();
             } catch (Exception e) {
@@ -108,8 +110,7 @@
                         <div class="row d-flex justify-content-between">
                             <div class="topbar-left">
                                 <ul>
-                                    <li><a href="faq-1.html"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
-                                    <li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-envelope-o"></i><%=_010_site_constats.get_site_email()%></a></li>
                                 </ul>
                             </div>
                             <div class="topbar-right">
@@ -137,6 +138,8 @@
                                         <%
                                             }
                                         %>
+                                    <li><a target="_blank" href="<%=_010_site_constats.get_site_facebook_link()%>" class="btn-link"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a target="_blank" href="<%=_010_site_constats.get_site_youtube_link()%> " class="btn-link"><i class="fa fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -147,7 +150,7 @@
                         <div class="container clearfix">
                             <!-- Header Logo ==== -->
                             <div class="menu-logo">
-                                <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                                <a href="_000_site_index_AccessServlet?lang=<%=lang%>"><img src="assets/images/logo-white.png" alt=""></a>
                             </div>
                             <!-- Mobile Nav Button ==== -->
                             <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -155,15 +158,6 @@
                                 <span></span>
                                 <span></span>
                             </button>
-                            <!-- Author Nav ==== -->
-                            <div class="secondary-menu">
-                                <div class="secondary-inner">
-                                    <ul>
-                                        <li><a target="_blank" href="<%=_010_site_constats.get_site_facebook_link()%>" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a target="_blank" href="<%=_010_site_constats.get_site_youtube_link()%> " class="btn-link"><i class="fa fa-youtube"></i></a></li>                                        
-                                    </ul>
-                                </div>
-                            </div>
                             <!-- Navigation Menu ==== -->
                             <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
                                 <div class="menu-logo">
@@ -174,6 +168,11 @@
                                     %>
                                     <%=navbar%>
                                 </ul>
+                                <div class="nav-social-link">
+                                    <a href="javascript:;"><i class="fa fa-facebook"></i></a>
+                                    <a href="javascript:;"><i class="fa fa-google-plus"></i></a>
+                                    <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                                </div>
                             </div>
                             <!-- Navigation Menu END ==== -->
                         </div>
@@ -243,11 +242,11 @@
                                         A0999Teachers_DAO a0999Teachers_DAO = new A0999Teachers_DAO();
 
                                         //GET teachers Head Of department
-                                        List<A0996Departments> dList = new A0996Departments_DAO().GetDepartmentsById("" + a0003SubTabs.getA0002Tabs().getA0996Departments().getDepartmentId());
+                                        List<A0996Departments> dList = new A0996Departments_DAO().GetDepartmentsById(Department);
                                         if (!dList.isEmpty()) {
                                             A0996Departments a0996Departments = dList.get(0);
-                                            String Head_id = "" + a0996Departments.getA0999TeachersByHeadId().getTeacherId();
-                                            String Vice_id = "" + a0996Departments.getA0999TeachersByViceHeadId().getTeacherId();
+                                            String Head_id = (a0996Departments.getA0999TeachersByHeadId() == null) ? "null" : "" + a0996Departments.getA0999TeachersByHeadId().getTeacherId();
+                                            String Vice_id = (a0996Departments.getA0999TeachersByViceHeadId() == null) ? "null" : "" + a0996Departments.getA0999TeachersByViceHeadId().getTeacherId();
 
                                             try {
                                                 List<A0999Teachers> teachList = a0999Teachers_DAO.GetTeacherByiD(Head_id);
@@ -267,7 +266,7 @@
                                         <div class="ttr-box portfolio-bx">
                                             <div class="ttr-media media-ov2 media-effect">
                                                 <a href="javascript:void(0);">
-                                                    <img src="<%=photo%>" alt=""> 
+                                                    <img style="height: 285px;" src="<%=photo%>" alt=""> 
                                                 </a>
                                                 <div class="ov-box">
                                                     <div class="overlay-icon align-m"> 
@@ -313,7 +312,7 @@
                                         <div class="ttr-box portfolio-bx">
                                             <div class="ttr-media media-ov2 media-effect">
                                                 <a href="javascript:void(0);">
-                                                    <img src="<%=photo%>" alt=""> 
+                                                    <img style="height: 285px;" src="<%=photo%>" alt=""> 
                                                 </a>
                                                 <div class="ov-box">
                                                     <div class="overlay-icon align-m"> 
@@ -345,7 +344,7 @@
 
                                     <!------------------------------------------- Prof Teachers ----------------------------->
                                     <%   //
-                                        List<A0999Teachers> teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Head_id, Vice_id, "1");
+                                        List<A0999Teachers> teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Department, Head_id, Vice_id, "1");
                                         for (A0999Teachers a0999Teachers : teachList) {
                                             String photo = (a0999Teachers.getTeacherPhoto() == null || a0999Teachers.getTeacherPhoto().isEmpty()) ? "admin/assets/images/user.png" : "data:image/jpeg;base64," + a0999Teachers.getTeacherPhoto();
 
@@ -363,7 +362,7 @@
                                         <div class="ttr-box portfolio-bx">
                                             <div class="ttr-media media-ov2 media-effect">
                                                 <a href="javascript:void(0);">
-                                                    <img src="<%=photo%>" alt=""> 
+                                                    <img style="height: 285px;" src="<%=photo%>" alt=""> 
                                                 </a>
                                                 <div class="ov-box">
                                                     <div class="overlay-icon align-m"> 
@@ -386,7 +385,7 @@
 
                                     <!------------------------------------------- Doctor Teachers ----------------------------->
                                     <%   //
-                                        teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Head_id, Vice_id, "2");
+                                        teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Department, Head_id, Vice_id, "2");
                                         for (A0999Teachers a0999Teachers : teachList) {
                                             String photo = (a0999Teachers.getTeacherPhoto() == null || a0999Teachers.getTeacherPhoto().isEmpty()) ? "admin/assets/images/user.png" : "data:image/jpeg;base64," + a0999Teachers.getTeacherPhoto();
 
@@ -404,7 +403,7 @@
                                         <div class="ttr-box portfolio-bx">
                                             <div class="ttr-media media-ov2 media-effect">
                                                 <a href="javascript:void(0);">
-                                                    <img src="<%=photo%>" alt=""> 
+                                                    <img style="height: 285px;" src="<%=photo%>" alt=""> 
                                                 </a>
                                                 <div class="ov-box">
                                                     <div class="overlay-icon align-m"> 
@@ -426,7 +425,7 @@
 
                                     <!------------------------------------------- Teacher Assistance ----------------------------->
                                     <%   //
-                                        teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Head_id, Vice_id, "3");
+                                        teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Department, Head_id, Vice_id, "3");
                                         for (A0999Teachers a0999Teachers : teachList) {
                                             String photo = (a0999Teachers.getTeacherPhoto() == null || a0999Teachers.getTeacherPhoto().isEmpty()) ? "admin/assets/images/user.png" : "data:image/jpeg;base64," + a0999Teachers.getTeacherPhoto();
 
@@ -444,7 +443,7 @@
                                         <div class="ttr-box portfolio-bx">
                                             <div class="ttr-media media-ov2 media-effect">
                                                 <a href="javascript:void(0);">
-                                                    <img src="<%=photo%>" alt=""> 
+                                                    <img style="height: 285px;" src="<%=photo%>" alt=""> 
                                                 </a>
                                                 <div class="ov-box">
                                                     <div class="overlay-icon align-m"> 
@@ -468,19 +467,19 @@
 
                                     <!------------------------------------------- Teacher ----------------------------->
                                     <%   //
-                                        teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Head_id, Vice_id, "4");
+                                        teachList = a0999Teachers_DAO.GetTypedTeachersExceptHeadAndVice(Department, Head_id, Vice_id, "4");
                                         for (A0999Teachers a0999Teachers : teachList) {
                                             String photo = (a0999Teachers.getTeacherPhoto() == null || a0999Teachers.getTeacherPhoto().isEmpty()) ? "admin/assets/images/user.png" : "data:image/jpeg;base64," + a0999Teachers.getTeacherPhoto();
 
                                             // Position Data
                                             List<A0995DepartmentsManagmentType> dmtList = new A0995DepartmentsManagmentType_DAO().GetDepartmentsManagmentTypeByID("2");// Vice Head                                            
-                                    %>
+%>
 
                                     <li class="action-card col-lg-3 col-md-4 col-sm-6 <%=a0999Teachers.getA0998TeachersTypes().getTeacherTypeNameE()%>">
                                         <div class="ttr-box portfolio-bx">
                                             <div class="ttr-media media-ov2 media-effect">
                                                 <a href="javascript:void(0);">
-                                                    <img src="<%=photo%>" alt=""> 
+                                                    <img style="height: 285px;" src="<%=photo%>" alt=""> 
                                                 </a>
                                                 <div class="ov-box">
                                                     <div class="overlay-icon align-m"> 

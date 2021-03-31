@@ -34,8 +34,9 @@ public class _002_teaching_staff_AccessServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String lang = request.getParameter("lang");
+        String Department = request.getParameter("Department");
         request.getSession().setAttribute("OpenHTMLFile", "Open");
-        request.getRequestDispatcher("/_002_teaching_staff.jsp?lang=" + lang).forward(request, response);
+        request.getRequestDispatcher("/_002_teaching_staff.jsp?lang=" + lang + "&Department=" + Department).forward(request, response);
         request.getSession().removeAttribute("OpenHTMLFile");
     }
 

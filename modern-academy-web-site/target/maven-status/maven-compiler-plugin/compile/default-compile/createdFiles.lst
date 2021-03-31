@@ -3,6 +3,7 @@ com\modern\www\_6_1_Login\_999_siter_logout_controlServlet.class
 com\modern\www\_5_2_admin_AjaxServlet\_000_general_Ajax_006_get_tabs_AjaxServlet.class
 com\modern\www\_4_2_account_AjaxServlet\_997_student_profile_000_get_student_by_id_AjaxServlet.class
 com\modern\www\_1_2_MySql_DB_entities\A0996Departments.class
+com\modern\www\_5_2_admin_AjaxServlet\_206_teachers_basic_data_003_delete_teachers_AjaxServlet.class
 com\modern\www\_1_1_MySql_DB_mainDao\HibernateSessionConMySql.class
 com\modern\www\_1_3_MySql_DB_daos\A0994DepartmentsManagers_DAO.class
 com\modern\www\_3_1_web_site_AccessServlets\_002_teaching_staff_AccessServlet.class
@@ -13,8 +14,10 @@ com\modern\www\_1_2_MySql_DB_entities\A9999AdminUsers.class
 com\modern\www\_1_2_MySql_DB_entities\A0000TabsTypes.class
 com\modern\www\_1_1_MySql_DB_mainDao\AbstractDao.class
 com\modern\www\_0_1_ElemaratiLib\MathOp.class
+com\modern\www\_5_2_admin_AjaxServlet\_206_teacher_profile_002_get_teacher_data_AjaxServlet.class
 com\modern\www\_0_1_ElemaratiLib\FileOp.class
 com\modern\www\_5_2_admin_AjaxServlet\_000_general_Ajax_009_delete_Tabs_AjaxServlet.class
+com\modern\www\_5_2_admin_AjaxServlet\_206_teachers_basic_data_001_add_teacher_AjaxServlet.class
 com\modern\www\_1_2_MySql_DB_entities\A0003SubTabsId.class
 com\modern\www\_1_2_MySql_DB_entities\A0050Levels.class
 com\modern\www\_1_3_MySql_DB_daos\A9999AdminUsers_DAO.class
@@ -42,11 +45,13 @@ com\modern\www\_1_3_MySql_DB_daos\A0997TeachersTeachCourses_DAO.class
 com\modern\www\_1_2_MySql_DB_entities\A0057Semester.class
 com\modern\www\_4_2_account_AjaxServlet\_998_teacher_profile_000_get_teacher_by_id_AjaxServlet.class
 com\modern\www\_7_1_jason_entities\a_0_0_5_2_students.class
+com\modern\www\_5_1_admin_AccessServlets\_206_teachers_basic_data_AccessServlet.class
 com\modern\www\_1_3_MySql_DB_daos\A0001MainTabs_DAO.class
 com\modern\www\_5_2_admin_AjaxServlet\_000_general_Ajax_004_update_main_tabs_AjaxServlet.class
 com\modern\www\_0_2_Elemarati_WebSettings\_011_tree_navbarMenu_Arabic.class
 com\modern\www\_4_2_account_AjaxServlet\_998_teacher_profile_003_get_teacher_courses_data_AjaxServlet.class
 com\modern\www\_5_2_admin_AjaxServlet\_000_general_Ajax_008_update_tabs_AjaxServlet.class
+com\modern\www\_3_1_web_site_AccessServlets\_003_Student_Events_News_AccessServlet.class
 com\modern\www\_6_1_Login\_002_site_login_ControlServlet.class
 com\modern\www\_4_2_account_AjaxServlet\_997_student_profile_001_update_student_profile_AjaxServlet.class
 com\modern\www\_0_3_Elemarati_pages_control\_000_session_needs.class
@@ -71,8 +76,10 @@ com\modern\www\_4_2_account_AjaxServlet\_997_student_profile_002_get_student_pro
 com\modern\www\_5_2_admin_AjaxServlet\_000_general_Ajax_000_get_super_auth_AjaxServlet.class
 com\modern\www\_0_2_Elemarati_WebSettings\_001_Site_navbarMenu_English.class
 com\modern\www\_1_2_MySql_DB_entities\A0999Teachers.class
+com\modern\www\_1_3_MySql_DB_daos\A0998TeachersTypes_DAO.class
 com\modern\www\_1_3_MySql_DB_daos\A0003SubTabs_DAO.class
 com\modern\www\_1_2_MySql_DB_entities\A0994DepartmentsManagers.class
+com\modern\www\_5_2_admin_AjaxServlet\_206_teachers_basic_data_002_update_teachers_AjaxServlet.class
 com\modern\www\_3_1_web_site_AccessServlets\_000_site_index_AccessServlet.class
 com\modern\www\_4_2_account_AjaxServlet\_998_teacher_profile_002_get_teacher_profile_data_AjaxServlet.class
 com\modern\www\_4_2_account_AjaxServlet\_998_teacher_profile_004_change_teacher_password_AjaxServlet.class

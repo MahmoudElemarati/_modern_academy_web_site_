@@ -249,6 +249,12 @@ function change_student_password() {
             message = "ensure that new password is the same of the repetition";
         }
         Warning(message);
+    } else if (new_password_1.length < password_length) {
+        if (lang_G === "ar") {
+            Warning("كلمة المرور لا تقل عن "+password_length+" حروف");
+        } else {
+            Warning("Password Cant Be Less Than "+password_length+" Characters");
+        }
     } else {
         var URL = "_997_student_profile_004_change_student_password_AjaxServlet?"
                 + "student_academic_email=" + general_student_academic_email

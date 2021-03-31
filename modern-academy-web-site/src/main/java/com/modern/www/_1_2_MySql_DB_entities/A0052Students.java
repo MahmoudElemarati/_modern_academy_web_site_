@@ -1,5 +1,5 @@
 package com.modern.www._1_2_MySql_DB_entities;
-// Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1
+// Generated Mar 29, 2021 8:57:57 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -28,6 +28,7 @@ public class A0052Students  implements java.io.Serializable {
      private int stdId;
      private A0050Levels a0050Levels;
      private A0051Lists a0051Lists;
+     private A0996Departments a0996Departments;
      private String stdNameA;
      private String stdNameE;
      private String stdProfilePhoto;
@@ -52,10 +53,11 @@ public class A0052Students  implements java.io.Serializable {
         this.stdUserName = stdUserName;
         this.stdPassword = stdPassword;
     }
-    public A0052Students(int stdId, A0050Levels a0050Levels, A0051Lists a0051Lists, String stdNameA, String stdNameE, String stdProfilePhoto, String stdAcademicEmail, String stdPersonalEmail, String stdUserName, String stdPassword, Set<A0056Complaints> a0056Complaintses, Set<A0055StudentsCourses> a0055StudentsCourseses) {
+    public A0052Students(int stdId, A0050Levels a0050Levels, A0051Lists a0051Lists, A0996Departments a0996Departments, String stdNameA, String stdNameE, String stdProfilePhoto, String stdAcademicEmail, String stdPersonalEmail, String stdUserName, String stdPassword, Set<A0056Complaints> a0056Complaintses, Set<A0055StudentsCourses> a0055StudentsCourseses) {
        this.stdId = stdId;
        this.a0050Levels = a0050Levels;
        this.a0051Lists = a0051Lists;
+       this.a0996Departments = a0996Departments;
        this.stdNameA = stdNameA;
        this.stdNameE = stdNameE;
        this.stdProfilePhoto = stdProfilePhoto;
@@ -97,6 +99,16 @@ public class A0052Students  implements java.io.Serializable {
     
     public void setA0051Lists(A0051Lists a0051Lists) {
         this.a0051Lists = a0051Lists;
+    }
+
+@ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="department_id")
+    public A0996Departments getA0996Departments() {
+        return this.a0996Departments;
+    }
+    
+    public void setA0996Departments(A0996Departments a0996Departments) {
+        this.a0996Departments = a0996Departments;
     }
 
     

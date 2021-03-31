@@ -19,6 +19,22 @@ import org.hibernate.query.Query;
  */
 public class A0999Teachers_DAO<T> extends AbstractDao<T> {
 
+    public int GetMaxRequireId() {
+        Query query = session.createQuery("Select IFNULL(max(p.teacherId),0)+1 from A0999Teachers p ");
+        int maxRequireSp = GetQueryNumber(query);
+        return maxRequireSp;
+    }
+
+    private int GetQueryNumber(Query query) {
+        List<Integer> list = query.getResultList();
+        int number = 0;// no Employee saved in the system
+        if (list.get(0) != null) {
+            number = list.get(0);
+        }
+        //System.out.println(number);
+        return number;
+    }
+
     public List<A0999Teachers> GetTeacherByFilterOf_TeacherType_And_TeacherDepartment(String teacherTypeId, String departmentId) {
         List<String> HQL_list = new ArrayList<>();
         if (!teacherTypeId.equals("All")) {
@@ -83,8 +99,9 @@ public class A0999Teachers_DAO<T> extends AbstractDao<T> {
         return pList;
     }
 
-    public List<A0999Teachers> GetTypedTeachersExceptHeadAndVice(String Head_id, String Vice_id, String teacherTypeId) {
-        Query query = session.createQuery("SELECT p from A0999Teachers p WHERE p.a0998TeachersTypes.teacherTypeId=:teacherTypeId AND p.teacherId NOT IN(:teacherId1,:teacherId2)");
+    public List<A0999Teachers> GetTypedTeachersExceptHeadAndVice(String departmentId, String Head_id, String Vice_id, String teacherTypeId) {
+        Query query = session.createQuery("SELECT p from A0999Teachers p WHERE p.a0996Departments.departmentId=:departmentId AND p.a0998TeachersTypes.teacherTypeId=:teacherTypeId AND p.teacherId NOT IN(:teacherId1,:teacherId2)");
+        query.setString("departmentId", departmentId);
         query.setString("teacherTypeId", teacherTypeId);
         query.setString("teacherId1", Head_id);
         query.setString("teacherId2", Vice_id);

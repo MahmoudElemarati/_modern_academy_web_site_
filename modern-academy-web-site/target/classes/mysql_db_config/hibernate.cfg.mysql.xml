@@ -43,32 +43,32 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <!--<property name="hibernate.connection.url">jdbc:mysql://192.168.1.4:3306/modern_web_site?zeroDateTimeBehavior=convertToNull</property>-->
-    <!--<property name="hibernate.connection.url">jdbc:mysql://192.168.1.8:3306/modern_web_site?autoReconnect=true&amp;useSSL=false</property>-->
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/modern_web_site?autoReconnect=true&amp;useSSL=false</property>
+    <!--<property name="hibernate.connection.url">jdbc:mysql://192.168.1.7:3306/modern_web_site?zeroDateTimeBehavior=convertToNull</property>-->
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.1.7:3306/modern_web_site?autoReconnect=true&amp;useSSL=false</property>
+    <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/modern_web_site?autoReconnect=true&amp;useSSL=false</property>-->
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
     <property name="show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <!--<property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>-->
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0051Lists.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0001MainTabs.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0000TabsTypes.hbm.xml"/>
     <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0994DepartmentsManagers.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0999Teachers.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0998TeachersTypes.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A9999AdminUsers.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0052Students.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0051Lists.hbm.xml"/>
     <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0995DepartmentsManagmentType.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0997TeachersTeachCourses.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0054Courses.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0002Tabs.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0996Departments.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0056Complaints.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0053Course.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0003SubTabs.hbm.xml"/>
-    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0055StudentsCourses.hbm.xml"/>
     <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0050Levels.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0000TabsTypes.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0998TeachersTypes.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0054Courses.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0999Teachers.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A9999AdminUsers.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0056Complaints.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0997TeachersTeachCourses.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0055StudentsCourses.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0003SubTabs.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0001MainTabs.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0996Departments.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0052Students.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0053Course.hbm.xml"/>
     <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0057Semester.hbm.xml"/>
+    <mapping resource="com/modern/www/_1_2_MySql_DB_entities/A0002Tabs.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -26,12 +26,13 @@ public class a_0_9_9_9_teachers {
     private String teacher_type;
     private String teacher_type_id;
     private String position;
+    private String lang;
 
     public a_0_9_9_9_teachers() {
 
     }
 
-    public a_0_9_9_9_teachers(String teacher_id, String department_id, String department_name, String teacher_photo, String teacher_name_a, String teacher_name_e, String teacher_linked_in, String teacher_facebook, String teacher_twitter, String teacher_google_plus, String teacher_academic_email, String teacher_password, String teacher_type, String teacher_type_id, String position) {
+    public a_0_9_9_9_teachers(String teacher_id, String department_id, String department_name, String teacher_photo, String teacher_name_a, String teacher_name_e, String teacher_linked_in, String teacher_facebook, String teacher_twitter, String teacher_google_plus, String teacher_academic_email, String teacher_password, String teacher_type, String teacher_type_id, String position, String lang) {
         this.teacher_id = teacher_id;
         this.department_id = department_id;
         this.department_name = department_name;
@@ -47,9 +48,9 @@ public class a_0_9_9_9_teachers {
         this.teacher_type = teacher_type;
         this.teacher_type_id = teacher_type_id;
         this.position = position;
+        this.lang = lang;
     }
 
-    
 
     public String getTeacher_photo() {
         return teacher_photo;
@@ -173,5 +174,13 @@ public class a_0_9_9_9_teachers {
 
     public void setTeacher_type_id(String teacher_type_id) {
         this.teacher_type_id = teacher_type_id;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
     }
 }

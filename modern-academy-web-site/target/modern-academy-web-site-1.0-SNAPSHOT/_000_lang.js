@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+var password_length = 6;
 function change_lang(link) {
     var lang = document.getElementById("lang").value;
     window.location.href = link + "?lang=" + lang;

@@ -40,7 +40,10 @@
 <html lang="en">
 
     <head>
-
+        <script src="_000_lang.js"></script>
+        <script>
+            get_super_auth('<%=lang%>');
+        </script>
         <!-- META ============================================= -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">

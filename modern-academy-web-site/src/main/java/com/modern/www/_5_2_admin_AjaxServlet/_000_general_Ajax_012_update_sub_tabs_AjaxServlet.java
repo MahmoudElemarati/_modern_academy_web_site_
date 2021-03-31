@@ -48,7 +48,7 @@ public class _000_general_Ajax_012_update_sub_tabs_AjaxServlet extends HttpServl
             String iconFaFa = request.getParameter("iconFaFa");
             String link = request.getParameter("link");
             String index = request.getParameter("index");
-            
+
             List<A0003SubTabs> A0003SubTabsList = new A0003SubTabs_DAO<>().GetSubTabsByIndex(index, mainTabId, tabId, subTabId);
             if (!A0003SubTabsList.isEmpty()) {
                 String message = (lang.equals("ar")) ? "هذا الترتيب موجود لقائمة فرعية بالفعل" : "This Index Exist In Sub Tab Already";
@@ -62,6 +62,12 @@ public class _000_general_Ajax_012_update_sub_tabs_AjaxServlet extends HttpServl
             }
             A0003SubTabs a0003SubTabs = A0003SubTabsList.get(0);
 
+            if (a0003SubTabs.getA0002Tabs().getA0996Departments() != null && !link.isEmpty()) {
+                String extention_avail = "?Department=" + a0003SubTabs.getA0002Tabs().getA0996Departments().getDepartmentId();
+                String extintion_will_be = (link.endsWith(extention_avail)) ? "" : extention_avail;
+
+                link = link + extintion_will_be;
+            }
             a0003SubTabs.setSubTabNameA(subTabNameA);
             a0003SubTabs.setSubTabNameE(subTabNameE);
             a0003SubTabs.setIconFaFa(iconFaFa);

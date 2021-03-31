@@ -82,9 +82,10 @@ public class _206_teacher_profile_002_get_teacher_data_AjaxServlet extends HttpS
                 teacher_Jason2.setDepartment_name(teacher.getA0996Departments().getDepartmentNameA() + " - " + teacher.getA0996Departments().getDepartmentNameE());
                 teacher_Jason2.setDepartment_id("" + teacher.getA0996Departments().getDepartmentId());
 
-                teacher_Jason2.setTeacher_photo(
-                        ("".equals(teacher.getTeacherPhoto()) || teacher.getTeacherPhoto() == null) ? "admin/assets/images/user.png" : "data:image/jpeg;base64," + teacher.getTeacherPhoto()
-                );
+//                teacher_Jason2.setTeacher_photo(
+//                        ("".equals(teacher.getTeacherPhoto()) || teacher.getTeacherPhoto() == null) ? "admin/assets/images/user.png" : "data:image/jpeg;base64," + teacher.getTeacherPhoto()
+//                );
+                teacher_Jason2.setTeacher_photo(teacher.getTeacherPhoto());
 
                 teachers_Jason_arr[i] = teacher_Jason2;
                 i++;

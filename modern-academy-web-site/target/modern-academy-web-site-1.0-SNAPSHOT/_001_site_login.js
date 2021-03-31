@@ -19,10 +19,19 @@ function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     if (username === "" || username === null) {
-        Warning("برجاء إدخال  اسم المستخدم");
+        if(lang_G==="ar"){
+            Warning("برجاء إدخال  اسم المستخدم");
+        }else{
+            Warning("Please Fill Academic email");
+        }
+        
         document.getElementById('username').style.borderColor = "red";
     } else if (password === "" || password === null) {
-        Warning("برجاء إدخال  كلمة المرور");
+        if(lang_G==="ar"){
+            Warning("برجاء إدخال  كلمة المرور");
+        }else{
+            Warning("Please Fill Password");
+        }        
         document.getElementById('password').style.borderColor = "red";
         document.getElementById('username').style.borderColor = "#737373";
     } else {

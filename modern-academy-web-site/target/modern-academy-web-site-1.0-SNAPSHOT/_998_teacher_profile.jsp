@@ -43,6 +43,7 @@
 <html lang="en">
 
     <head>
+        <script src="_000_lang.js"></script>
         <script src="_998_teacher_profile.js"></script>
         <script>
             <%                if (account_type.equals("teacher")) {
@@ -295,7 +296,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="courses">
                                     <div class="profile-head">
-                                        <h3>My Courses</h3>
+                                        <h3><%=(lang.equals("ar") ? "المواد" : "My Courses")%></h3>
                                     </div>
                                     <div class="courses-filter">
                                         <div class="clearfix">
@@ -644,9 +645,11 @@
         <!-- PNotify -->
         <script src="assets/vendors/pnotify/dist/pnotify.js"></script>
         <script src="assets/vendors/pnotify/dist/pnotify.buttons.js"></script>
+        
 
         <!-- Tree -->
-        <script src="assets/vendors/tree/tree.js"></script>        
+        <script src="assets/vendors/tree/tree.js"></script>     
+        
         <script>
 
                                                     if (window.File && window.FileReader && window.FileList && window.Blob) {

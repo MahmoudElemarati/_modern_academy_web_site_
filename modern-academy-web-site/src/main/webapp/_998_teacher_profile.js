@@ -308,6 +308,12 @@ function change_teacher_password() {
             message = "ensure that new password is the same of the repetition";
         }
         Warning(message);
+    } else if (new_password_1.length < password_length) {
+        if (lang_G === "ar") {
+            Warning("كلمة المرور لا تقل عن "+password_length+" حروف");
+        } else {
+            Warning("Password Cant Be Less Than "+password_length+" Characters");
+        }
     } else {
         var URL = "_998_teacher_profile_004_change_teacher_password_AjaxServlet?"
                 + "teacher_academic_email=" + general_teacher_academic_email

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 29, 2021 8:57:58 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.modern.www._1_2_MySql_DB_entities.A0052Students" table="a_0_0_5_2_students" catalog="modern_web_site" optimistic-lock="version">
         <id name="stdId" type="int">
@@ -13,6 +13,9 @@
         </many-to-one>
         <many-to-one name="a0051Lists" class="com.modern.www._1_2_MySql_DB_entities.A0051Lists" fetch="select">
             <column name="list_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="a0996Departments" class="com.modern.www._1_2_MySql_DB_entities.A0996Departments" fetch="select">
+            <column name="department_id" />
         </many-to-one>
         <property name="stdNameA" type="string">
             <column name="std_name_a" length="100" not-null="true" />

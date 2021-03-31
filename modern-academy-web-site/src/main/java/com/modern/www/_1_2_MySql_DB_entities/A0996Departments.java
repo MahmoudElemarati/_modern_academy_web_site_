@@ -1,5 +1,5 @@
 package com.modern.www._1_2_MySql_DB_entities;
-// Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1
+// Generated Mar 29, 2021 8:57:57 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -31,6 +31,7 @@ public class A0996Departments  implements java.io.Serializable {
      private Integer departmentIndex;
      private Set<A0999Teachers> a0999Teacherses = new HashSet<A0999Teachers>(0);
      private Set<A0994DepartmentsManagers> a0994DepartmentsManagerses = new HashSet<A0994DepartmentsManagers>(0);
+     private Set<A0052Students> a0052Studentses = new HashSet<A0052Students>(0);
      private Set<A0053Course> a0053Courses = new HashSet<A0053Course>(0);
      private Set<A0002Tabs> a0002Tabses = new HashSet<A0002Tabs>(0);
 
@@ -43,7 +44,7 @@ public class A0996Departments  implements java.io.Serializable {
         this.departmentNameA = departmentNameA;
         this.departmentNameE = departmentNameE;
     }
-    public A0996Departments(int departmentId, A0999Teachers a0999TeachersByHeadId, A0999Teachers a0999TeachersByViceHeadId, String departmentNameA, String departmentNameE, Integer departmentIndex, Set<A0999Teachers> a0999Teacherses, Set<A0994DepartmentsManagers> a0994DepartmentsManagerses, Set<A0053Course> a0053Courses, Set<A0002Tabs> a0002Tabses) {
+    public A0996Departments(int departmentId, A0999Teachers a0999TeachersByHeadId, A0999Teachers a0999TeachersByViceHeadId, String departmentNameA, String departmentNameE, Integer departmentIndex, Set<A0999Teachers> a0999Teacherses, Set<A0994DepartmentsManagers> a0994DepartmentsManagerses, Set<A0052Students> a0052Studentses, Set<A0053Course> a0053Courses, Set<A0002Tabs> a0002Tabses) {
        this.departmentId = departmentId;
        this.a0999TeachersByHeadId = a0999TeachersByHeadId;
        this.a0999TeachersByViceHeadId = a0999TeachersByViceHeadId;
@@ -52,6 +53,7 @@ public class A0996Departments  implements java.io.Serializable {
        this.departmentIndex = departmentIndex;
        this.a0999Teacherses = a0999Teacherses;
        this.a0994DepartmentsManagerses = a0994DepartmentsManagerses;
+       this.a0052Studentses = a0052Studentses;
        this.a0053Courses = a0053Courses;
        this.a0002Tabses = a0002Tabses;
     }
@@ -134,6 +136,15 @@ public class A0996Departments  implements java.io.Serializable {
     
     public void setA0994DepartmentsManagerses(Set<A0994DepartmentsManagers> a0994DepartmentsManagerses) {
         this.a0994DepartmentsManagerses = a0994DepartmentsManagerses;
+    }
+
+@OneToMany(fetch=FetchType.EAGER, mappedBy="a0996Departments")
+    public Set<A0052Students> getA0052Studentses() {
+        return this.a0052Studentses;
+    }
+    
+    public void setA0052Studentses(Set<A0052Students> a0052Studentses) {
+        this.a0052Studentses = a0052Studentses;
     }
 
 @OneToMany(fetch=FetchType.EAGER, mappedBy="a0996Departments")

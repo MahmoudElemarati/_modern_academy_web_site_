@@ -680,7 +680,7 @@
                             <div class="row">
                                 <div class="col-md-12 text-white heading-bx left">
                                     <h2 class="title-head text-uppercase">
-                                        <%=(lang.equals("ar")) ? " كلمات <span> أعضاء هيئة التدريس</span>" : "what people <span>say</span>"%>
+                                        <%=(lang.equals("ar")) ? "المسؤولين <span></span>" : "Admins <span></span>"%>
                                     </h2>                                   
                                 </div>
                             </div>
@@ -688,28 +688,78 @@
                                 <div class="item">
                                     <div class="testimonial-bx">
                                         <div class="testimonial-thumb">
-                                            <img src="assets/images/testimonials/pic1.jpg" alt="">
+                                            <img src="_000_site_index_photos/NABIL DEBES.png" alt="">
                                         </div>
                                         <div class="testimonial-info">
-                                            <h5 class="name">Peter Packer</h5>
-                                            <p>-Art Director</p>
+                                            <h5 class="name"><%=(lang.equals("ar")) ? "الأستاذ الدكتور نبيل دعبس" : "PROF. DR. NABIL DEBES"%></h5>
+                                            <p>-<%=(lang.equals("ar")) ? "مؤسس الأكاديمية الحديثة" : "Founder Of Modern Academy"%></p>
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>
+                                            <p>Modern academy in Maadi was founded in 1993 with a vision of enriching private 
+                                                education in Egypt. In addition, Modern Academy implements national and educational 
+                                                policies to provide our country with qualified individuals capable of achieving the 
+                                                country's goals of progress and development.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="testimonial-bx">
                                         <div class="testimonial-thumb">
-                                            <img src="assets/images/testimonials/pic2.jpg" alt="">
+                                            <img src="_000_site_index_photos/TOSSON MOHAMED NABIL.jpg" alt="">
                                         </div>
                                         <div class="testimonial-info">
-                                            <h5 class="name">Peter Packer</h5>
-                                            <p>-Art Director</p>
+                                            <h5 class="name"><%=(lang.equals("ar")) ? "الدكتور طوسون محمد نبيل" : "DR. TOSSON MOHAMED NABIL"%></h5>
+                                            <p>-Chairman Of The Board</p>
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type...</p>
+                                            <p>Modern Academy for Engineering and Technology is a higher Institute founded in 
+                                                (2000) by the Ministerial Decision No. 2003 dated 25/10/2000. The Academy accepts 
+                                                students obtaining the General Certificate of Secondary Education 
+                                                (Thanaweya Amma - specialization: Mathematics) and the equivalent certificate 
+                                                of secondary education from Arab and foreign countries and the certificate 
+                                                of technical secondary education of the five year school system.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testimonial-bx">
+                                        <div class="testimonial-thumb">
+                                            <img src="_000_site_index_photos/MONA BASSYONI.png" alt="">
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <h5 class="name"><%=(lang.equals("ar")) ? "الأستاذ الدكتور منى بسيوني" : "PROF.DR. MONA BASSYONI"%></h5>
+                                            <p>-Dean</p>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>Welcome to Modern Academy for Engineering and Technology. Modern Academy for Engineering 
+                                                and Technology is an institution of Higher Education committed to teaching of the highest 
+                                                caliber, offering professional education in the field of Engineering. The Academy provides 
+                                                a culture of leadership, lifelong learning, effective education and service to its students. 
+                                                Modern Academy for Engineering and Technology is an independent institution upholding the 
+                                                principles of academic freedom and dedicated to excellence. Modern Academy for engineering and 
+                                                Technology aspires to be one of the most distinguished higher engineering institutes locally and 
+                                                regionally in the field of engineering sciences and their applications.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testimonial-bx">
+                                        <div class="testimonial-thumb">
+                                            <img src="_000_site_index_photos/REHAM MOSTAFA MOHAMED MOHIE EL-DIN.jpg" alt="">
+                                        </div>
+                                        <div class="testimonial-info">
+                                            <h5 class="name"><%=(lang.equals("ar")) ? "الأستاذ الدكتور ريهام مصطفى محمد محي الدين" : "PROF. DR. REHAM MOSTAFA MOHAMED MOHIE EL-DIN"%></h5>
+                                            <p>-Dean</p>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>Welcome to Modern Academy for Engineering and Technology. Modern Academy for Engineering 
+                                                and Technology is an institution of Higher Education committed to teaching of the highest 
+                                                caliber, offering professional education in the field of Engineering. The Academy provides 
+                                                a culture of leadership, lifelong learning, effective education and service to its students. 
+                                                Modern Academy for Engineering and Technology is an independent institution upholding the 
+                                                principles of academic freedom and dedicated to excellence. Modern Academy for engineering and 
+                                                Technology aspires to be one of the most distinguished higher engineering institutes locally and 
+                                                regionally in the field of engineering sciences and their applications.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -763,7 +813,7 @@
                         <div class="container">
                             <div class="d-flex align-items-stretch">
                                 <div class="pt-logo mr-auto">
-                                    <a href="index.html"><img src="assets/images/logo-white.png" width="30%" alt=""/></a>
+                                    <a href="_000_site_index_AccessServlet?lang=<%=lang%>"><img src="assets/images/logo-white.png" width="30%" alt=""/></a>
                                 </div>
                                 <div class="pt-social-link">
                                     <ul class="list-inline m-a0">

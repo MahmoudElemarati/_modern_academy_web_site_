@@ -1,5 +1,5 @@
 package com.modern.www._1_2_MySql_DB_entities;
-// Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1
+// Generated Mar 29, 2021 8:57:57 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;

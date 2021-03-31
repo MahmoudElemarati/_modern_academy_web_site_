@@ -22,5 +22,11 @@ public class A0998TeachersTypes_DAO<T> extends AbstractDao<T> {
         List<A0998TeachersTypes> pList = query.getResultList();
         return pList;
     }
+    public List<A0998TeachersTypes> GetTeacherTypesById(String teacherTypeId) {
+        Query query = session.createQuery("SELECT p from A0998TeachersTypes p WHERE p.teacherTypeId=:teacherTypeId");
+        query.setString("teacherTypeId", teacherTypeId);
+        List<A0998TeachersTypes> pList = query.getResultList();
+        return pList;
+    }
 
 }

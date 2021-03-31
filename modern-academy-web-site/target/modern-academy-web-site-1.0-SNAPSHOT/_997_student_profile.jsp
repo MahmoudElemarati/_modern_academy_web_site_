@@ -43,6 +43,7 @@
 <html lang="en">
 
     <head>
+        <script src="_000_lang.js"></script>
         <script src="_997_student_profile.js"></script>
         <script>
             <%                if (account_type.equals("account")) {
@@ -292,7 +293,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="courses">
                                     <div class="profile-head">
-                                        <h3>My Courses</h3>
+                                        <h3><%=(lang.equals("ar") ? "المواد" : "My Courses")%></h3>
                                     </div>
                                     <div class="courses-filter">
                                         <div class="clearfix">
@@ -474,13 +475,13 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label"><%=(lang.equals("ar")) ? "الإسم باللغة العربية" : "Name In Arabic"%></label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                    <input class="form-control" id="student_name_a" type="text" placeholder="<%=(lang.equals("ar")) ? "الإسم باللغة العربية" : "Name In Arabic"%>">
+                                                    <input class="form-control" id="student_name_a2" type="text" placeholder="<%=(lang.equals("ar")) ? "الإسم باللغة العربية" : "Name In Arabic"%>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label"><%=(lang.equals("ar")) ? "الإسم باللغة الإنجليزية" : "Name In English"%></label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                    <input class="form-control" id="student_name_e" type="text" placeholder="<%=(lang.equals("ar")) ? "الإسم باللغة الإنجليزية" : "Name In English"%>">
+                                                    <input class="form-control" id="student_name_e2" type="text" placeholder="<%=(lang.equals("ar")) ? "الإسم باللغة الإنجليزية" : "Name In English"%>">
                                                 </div>
                                             </div>
 
@@ -495,14 +496,14 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label"><%=(lang.equals("ar")) ? "الإيميل الأكاديمي" : "Academic Email"%></label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                    <input class="form-control" readonly="" id="student_academic_email" type="text" placeholder="<%=(lang.equals("ar")) ? "الإيميل الأكاديمي" : "Academic Email"%>">
+                                                    <input class="form-control" readonly="" id="student_academic_email2" type="text" placeholder="<%=(lang.equals("ar")) ? "الإيميل الأكاديمي" : "Academic Email"%>">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label"><%=(lang.equals("ar")) ? "المستوى الأكاديمي" : "Academic Level"%></label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                    <input class="form-control" readonly="" id="student_level" type="text" placeholder="<%=(lang.equals("ar")) ? "المستوى الأكاديمي" : "Academic Level"%>">
+                                                    <input class="form-control" readonly="" id="student_level2" type="text" placeholder="<%=(lang.equals("ar")) ? "المستوى الأكاديمي" : "Academic Level"%>">
                                                 </div>
                                             </div>
 
@@ -517,7 +518,7 @@
                                             <div class="form-group row">
                                                 <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label"><%=(lang.equals("ar")) ? "الإيميل الخاص" : "Personal Email"%></label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                    <input class="form-control" type="text" id="student_personal_email" placeholder="<%=(lang.equals("ar")) ? "الإيميل الخاص" : "Personal Email"%>">
+                                                    <input class="form-control" type="text" id="student_personal_email2" placeholder="<%=(lang.equals("ar")) ? "الإيميل الخاص" : "Personal Email"%>">
                                                 </div>
                                             </div>                                            
                                         </div>
@@ -610,7 +611,9 @@
         <script src="assets/vendors/pnotify/dist/pnotify.buttons.js"></script>
 
         <!-- Tree -->
-        <script src="assets/vendors/tree/tree.js"></script>        
+        <script src="assets/vendors/tree/tree.js"></script>  
+        
+        
         <script>
 
                                                     if (window.File && window.FileReader && window.FileList && window.Blob) {

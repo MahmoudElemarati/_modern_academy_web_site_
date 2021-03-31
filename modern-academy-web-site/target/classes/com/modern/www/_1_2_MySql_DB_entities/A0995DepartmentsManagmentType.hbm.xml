@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Feb 20, 2021 9:15:52 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 29, 2021 8:57:58 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.modern.www._1_2_MySql_DB_entities.A0995DepartmentsManagmentType" table="a_0_9_9_5_departments_managment_type" catalog="modern_web_site"
     optimistic-lock="version">

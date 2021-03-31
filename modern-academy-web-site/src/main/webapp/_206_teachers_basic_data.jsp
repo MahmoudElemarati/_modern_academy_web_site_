@@ -309,11 +309,67 @@
                                             </select>                                            
                                         </div>
                                     </div>
+                                    <style>
+                                        .cim {
+                                            position: relative;
+                                            width: 100%;
+                                            max-width: 400px;
+                                        }
 
+                                        .cim img {
+                                            width: 100%;
+                                            height: auto;
+                                        }
+
+                                        .cim .btnn::-webkit-file-upload-button {
+                                            visibility: hidden;
+                                        }
+                                        .cim .btnn::before {
+                                            content: 'upload new photo';
+                                            display: inline-block;
+                                            position: absolute;
+                                            top: 60.5%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%);
+                                            -ms-transform: translate(-50%, -50%);
+                                            background-color: #55555540;
+                                            color: white;
+                                            font-size: 16px;
+                                            padding: 12px 24px;
+                                            border: none;
+                                            cursor: pointer;
+                                            border-radius: 5px;
+                                            text-align: center;
+                                            border-radius: 100px;
+                                            width: 200px;
+                                            height: 200px;
+                                        }
+                                        .cim .btnn:hover::before {
+                                            background-color: #5555557a;
+                                        }
+                                        .cim .btnn:active::before {
+                                            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+                                        }
+
+                                    </style>
+                                    <div class="col-md-12">
+                                        <label class="col-form-label"><%=(lang.equals("ar")) ? "الصورة الشخصية" : "Personal Photo"%></label>                                        
+                                        <div style="display: flex;">
+                                            <div class="cim">
+                                                <input accept="image/*" type="file" class="btnn" size="50" id="filePicker" onchange="showImage.call(this)" value="" >
+                                                <img src="admin/assets/images/user.png" id="profile-image-1"
+                                                     style="width: 200px; overflow: hidden; border-radius: 100px; 
+                                                     border: 5px solid rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px 0px; 
+                                                     margin: 25px auto 15px; display: block;"
+                                                     alt=""/>
+                                            </div> 
+                                            <textarea hidden="" id="profile-image-1-val" placeholder="Base64 will appear here" cols="50" rows="15"></textarea>                                         
+                                        </div>
+                                    </div>
 
                                     <div class="col-12">
                                         <br>
-                                        <button type="button" onclick="add_main_tabs('account', '<%=lang%>');" class="btn" style="-webkit-border-radius: 100px;"><i class="fa fa-fw fa-plus-circle"></i> <%=(lang.equals("ar")) ? "حفظ" : "Save"%></button>
+                                        <button type="button" onclick="add_teacher('<%=lang%>');" class="btn" style="-webkit-border-radius: 100px;"><i class="fa fa-fw fa-plus-circle"></i> <%=(lang.equals("ar")) ? "حفظ" : "Save"%></button>
                                     </div>                                    
 
                                 </div>
@@ -409,6 +465,28 @@
         <div class="ttr-overlay"></div>
 
         <!-- Modal -->
+        <div class="modal right fade  bd-example-modal-lg" id="teacherDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 1000px;" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><%=(lang.equals("ar")) ? "حذف هيئة تدريس" : "Delete Teacher"%></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div style="text-align: Center;">
+                            <h1 style="color: #dc3545;"><%=(lang.equals("ar")) ? "هل أنت متأكد من عملية الحذف تلك؟" : "Are you sure of this deletion"%></h1>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondry add-item m-r5 radius-xl" data-dismiss="modal"><i class="fa fa-fw fa-close"></i> <%=(lang.equals("ar")) ? "إلغاء" : "Cancel"%></button>
+                        <button type="button" onclick="delete_teachers('', 'delete-modal', '<%=lang%>')" class="btn-danger" style="-webkit-border-radius: 100px;"><i class="fa fa-fw fa-close"></i> <%=(lang.equals("ar")) ? "حذف" : "Delete"%></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
         <div class="modal right fade  bd-example-modal-lg" id="teacherUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 1000px;" role="document">
                 <div class="modal-content">
@@ -477,6 +555,20 @@
                                     </select>                                            
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <label class="col-form-label"><%=(lang.equals("ar")) ? "الصورة الشخصية" : "Personal Photo"%></label>                                        
+                                <div style="display: flex;">
+                                    <div class="cim">
+                                        <input accept="image/*" type="file" class="btnn" size="50" id="filePicker2" onchange="showImage.call(this)" value="" >
+                                        <img src="admin/assets/images/user.png" id="profile-image-2"
+                                             style="width: 200px; overflow: hidden; border-radius: 100px; 
+                                             border: 5px solid rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px 0px; 
+                                             margin: 25px auto 15px; display: block;"
+                                             alt=""/>
+                                    </div> 
+                                    <textarea hidden="" id="profile-image-2-val" placeholder="Base64 will appear here" cols="50" rows="15"></textarea>                                         
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -488,28 +580,7 @@
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal right fade  bd-example-modal-lg" id="teacherDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 1000px;" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle"><%=(lang.equals("ar")) ? "حذف هيئة تدريس" : "Delete Teacher"%></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div style="text-align: Center;">
-                            <h1 style="color: #dc3545;"><%=(lang.equals("ar")) ? "هل أنت متأكد من عملية الحذف تلك؟" : "Are you sure of this deletion"%></h1>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn-secondry add-item m-r5 radius-xl" data-dismiss="modal"><i class="fa fa-fw fa-close"></i> <%=(lang.equals("ar")) ? "إلغاء" : "Cancel"%></button>
-                        <button type="button" onclick="delete_teachers('', 'delete-modal', '<%=lang%>')" class="btn-danger" style="-webkit-border-radius: 100px;"><i class="fa fa-fw fa-close"></i> <%=(lang.equals("ar")) ? "حذف" : "Delete"%></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
 
 
@@ -543,7 +614,20 @@
         <script>
                             get_teacher_data('<%=lang%>');
         </script>
+        <script>
 
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
+            } else {
+                alert('الملف غير مدعم');
+            }
+
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                document.getElementById('filePicker2').addEventListener('change', handleFileSelect, false);
+            } else {
+                alert('الملف غير مدعم');
+            }
+        </script>
 
 
     </body>

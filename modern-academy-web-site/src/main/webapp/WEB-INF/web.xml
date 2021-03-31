@@ -168,6 +168,22 @@
         <servlet-name>_206_teacher_profile_002_get_teacher_data_AjaxServlet</servlet-name>
         <servlet-class>com.modern.www._5_2_admin_AjaxServlet._206_teacher_profile_002_get_teacher_data_AjaxServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>_003_Student_Events_News_AccessServlet</servlet-name>
+        <servlet-class>com.modern.www._3_1_web_site_AccessServlets._003_Student_Events_News_AccessServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>_206_teachers_basic_data_001_add_teacher_AjaxServlet</servlet-name>
+        <servlet-class>com.modern.www._5_2_admin_AjaxServlet._206_teachers_basic_data_001_add_teacher_AjaxServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>_206_teachers_basic_data_002_update_teachers_AjaxServlet</servlet-name>
+        <servlet-class>com.modern.www._5_2_admin_AjaxServlet._206_teachers_basic_data_002_update_teachers_AjaxServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>_206_teachers_basic_data_003_delete_teachers_AjaxServlet</servlet-name>
+        <servlet-class>com.modern.www._5_2_admin_AjaxServlet._206_teachers_basic_data_003_delete_teachers_AjaxServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>_000_site_index_AccessServlet</servlet-name>
         <url-pattern>/_000_site_index_AccessServlet</url-pattern>
@@ -335,6 +351,22 @@
     <servlet-mapping>
         <servlet-name>_206_teacher_profile_002_get_teacher_data_AjaxServlet</servlet-name>
         <url-pattern>/_206_teacher_profile_002_get_teacher_data_AjaxServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>_003_Student_Events_News_AccessServlet</servlet-name>
+        <url-pattern>/_003_Student_Events_News_AccessServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>_206_teachers_basic_data_001_add_teacher_AjaxServlet</servlet-name>
+        <url-pattern>/_206_teachers_basic_data_001_add_teacher_AjaxServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>_206_teachers_basic_data_002_update_teachers_AjaxServlet</servlet-name>
+        <url-pattern>/_206_teachers_basic_data_002_update_teachers_AjaxServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>_206_teachers_basic_data_003_delete_teachers_AjaxServlet</servlet-name>
+        <url-pattern>/_206_teachers_basic_data_003_delete_teachers_AjaxServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
